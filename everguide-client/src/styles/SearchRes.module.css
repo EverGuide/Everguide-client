@@ -10,19 +10,36 @@
     width: 100vw;
 }
 
-.title{
+.title1{
     font-family: "NanumGothic";
     justify-content: center;
     display: flex;
+    text-align: center;
     font-family: 'Anek Tamil';
     font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 140%;
-    letter-spacing: 0.02em;
+    font-weight: 800;
+    font-size: 36px;
+    font-style: bold;
+    line-height: 160%;
     text-transform: capitalize;
     color: #4D4D4D;
 }
+
+.title2{
+    font-family: "NanumGothic";
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    font-style: bold;
+    line-height: 160%;
+    text-transform: capitalize;
+    color: #FF8577;
+    margin-top: 14px;
+}
+
 .filter{
     font-family: "NanumGothic";
     font-style: normal;

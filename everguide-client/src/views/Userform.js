@@ -80,7 +80,6 @@ function Userform() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('폼이 제출되었습니다.');
   };
 
   const onApply = () => {

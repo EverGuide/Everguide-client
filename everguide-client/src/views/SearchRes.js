@@ -58,11 +58,12 @@ function SearchRes() {
         height:"200px",
         
       }}>{!loading && <div>
-        <div className={styles.title}>복지정책이 도착했습니다. 확인해주세요!</div>
+        <div className={styles.title1}>한승우님에게 해당하는 정책은 다음과 같아요! </div>
           <div style={{
             marginTop:"1vh",
             width:window.screen.width
           }}>
+        <div className={styles.title2}>지원 정책을 클릭하면 지원 사이트로 바로 이동해요. </div>
           <div className={styles.filter}>필터
                <input className={styles.box} type='text'
                value={filterText}
