@@ -4,9 +4,9 @@ function APIBaseResponse(isSuccess, success, message, code, status) {
     this.message = message;
     this.code = code;
     this.status = status;
-  }
-  
-  function APIResponse(result, isSuccess, success, message, code, status) {
+}
+
+function APIResponse(result, isSuccess, success, message, code, status) {
     APIBasesResponse.call(this, isSuccess, success, message, code, status);
     this.result = result;
-  }
+}

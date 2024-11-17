@@ -15,7 +15,6 @@
     justify-content: center;
     display: flex;
     text-align: center;
-    font-family: 'Anek Tamil';
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
@@ -35,7 +34,6 @@
     font-size: 24px;
     font-style: bold;
     line-height: 160%;
-    text-transform: capitalize;
     color: #FF8577;
     margin-top: 14px;
 }
@@ -44,10 +42,8 @@
     font-family: "NanumGothic";
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 140%;
-    letter-spacing: 0.02em;
-    text-transform: capitalize;
+    font-size: 20px;
+    line-height: 160%;
     color: #4D4D4D;
     justify-content: right;
     display: flex;
@@ -66,8 +62,8 @@
 }
 
 .contentwrap{
-    font-family: "NanumSquare";
-    padding-top: 50px;
+    font-family: "NanumGothic";
+    padding-top: 22px;
     margin-top: 50px;
     justify-content: center;
     overflow-y: scroll;
@@ -77,44 +73,45 @@
 }
 
 .content{
-    font-family: "NanumSquare";
-    padding-top: 10px;
+    font-family: "NanumGothic";
+    padding-top: 25px;
     margin-left: 100px;
-    margin-top: 50px;
-    width: 1400px;
+    margin-top: 22px;
+    width: 1440px;
     height: 290px;
-    background: #67CE96;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #FFFBEE;
     border-radius: 40px;
 }
+
 .content div{
-    margin-left: 50px;
+    margin-left: 44px;
     margin-bottom: 10px;
-    font-family: "NanumSquare";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 140%;
-    letter-spacing: 0.02em;
-    text-transform: capitalize;
-
-    color: #FFFFFF;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "NanumGothic";
+    font-style: bold;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 160%;
+    color: #FF8577;
 }
+
 .content span{
-    margin-left: 80px;
-    font-family: "NanumSquare";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 35px;
-    line-height: 140%;
-    letter-spacing: 0.02em;
-    text-transform: capitalize;
+    margin-left: 44px;
+    font-family: "NanumGothic";
+    font-style: bold;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 160%;
+    color: #4E4C49;
+}
 
-    color: #FFFFFF;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.content a{
+    margin-left: 44px;
+    font-family: "NanumGothic";
+    font-style: bold;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 160%;
+    color: #FF8577;
 }
 
 .loding{

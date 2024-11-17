@@ -80,6 +80,7 @@ function Userform() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log('폼이 제출되었습니다.');
   };
 
   const onApply = () => {
@@ -107,26 +108,31 @@ function Userform() {
 
   const onRegisterUserInfo = async () => {
     try {
-      const response = (
-        await UserformAPI({
-          name: name,
-          birthdate: [year, month, date].userform('-'),
-          gender: selectedSex,
-          region: selectedLocal,
-          single_household: selectedHold,
-          has_chronic_disease: selectedDisease,
-          is_disabled_or_single_parent_or_grandparent: selectedDisper,
-          housing_type: selectedLive,
-          is_low_income: selectedLow,
-          is_basic_living_recipient: selectedBasic,
-          needs_medical_support: selectedMedic
-        })
-      ).data;
-      console.log(response);
+      // 'O'를 true로, 'X'를 false로 변환
+      const response = await UserformAPI({
+        name: name,
+        birthdate: `${year}-${month}-${date}`, // YYYY-MM-DD 형식으로 변환
+        gender: selectedSex,
+        region: selectedLocal,
+        single_household: selectedHold === 'O', // 'O'를 true로 변환
+        has_chronic_disease: selectedDisease === 'O', // 'O'를 true로 변환
+        is_disabled_or_single_parent_or_grandparent: selectedDisper === 'O', // 'O'를 true로 변환
+        housing_type: selectedLive,
+        is_low_income: selectedLow === 'O', // 'O'를 true로 변환
+        is_basic_living_recipient: selectedBasic === 'O', // 'O'를 true로 변환
+        needs_medical_support: selectedMedic === 'O' // 'O'를 true로 변환
+      });
+      console.log('서버 응답:', response.data);
     } catch (err) {
-      console.log(err);
+      if (err instanceof AxiosError) {
+        console.error('Axios 에러:', err.response?.data);
+      } else {
+        console.error('다른 에러:', err);
+      }
     }
   };
+  
+  
 
   return (
     <div>

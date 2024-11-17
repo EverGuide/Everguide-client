@@ -20,9 +20,9 @@ function UserformRequest(
     this.is_low_income = is_low_income;
     this.is_basic_living_recipient = is_basic_living_recipient;
     this.needs_medical_support = needs_medical_support;
-  }
-  
-  function UserformResponse(
+}
+
+function UserformResponse(
     status, 
     message, 
     isSuccess, 
@@ -35,4 +35,4 @@ function UserformRequest(
     this.success = success;
     this.code = code;
     this.detail = detail;
-    }
+  }
