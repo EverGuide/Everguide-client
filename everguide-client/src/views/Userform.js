@@ -114,27 +114,27 @@ function Userform() {
     ) {
       // 서버에 데이터 전송
       onRegisterUserInfo();
-      window.location.href = "/SearchRes";
     } else {
-      // createToast('입력값을 확인해주세요.');
+      console.log('입력값 확인');
     }
   };
 
   const onRegisterUserInfo = async () => {
     try {
-      // 'O'를 true로, 'X'를 false로 변환
       const response = await UserformAPI({
         name: name,
-        birthdate: `${year}-${month}-${date}`, // YYYY-MM-DD 형식으로 변환
+        birth_year: year, 
+        birth_month: month,
+        birth_date: date,
         gender: selectedSex,
         region: selectedLocal,
-        single_household: selectedHold === 'O', // 'O'를 true로 변환
-        has_chronic_disease: selectedDisease === 'O', // 'O'를 true로 변환
-        is_disabled_or_single_parent_or_grandparent: selectedDisper === 'O', // 'O'를 true로 변환
+        single_household: selectedHold, 
+        has_chronic_disease: selectedDisease, 
+        is_disabled_or_single_parent_or_grandparent: selectedDisper, 
         housing_type: selectedLive,
-        is_low_income: selectedLow === 'O', // 'O'를 true로 변환
-        is_basic_living_recipient: selectedBasic === 'O', // 'O'를 true로 변환
-        needs_medical_support: selectedMedic === 'O' // 'O'를 true로 변환
+        is_low_income: selectedLow, 
+        is_basic_living_recipient: selectedBasic, 
+        needs_medical_support: selectedMedic 
       });
       console.log('서버 응답:', response.data);
     } catch (err) {

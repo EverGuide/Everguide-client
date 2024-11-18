@@ -1,31 +1,19 @@
-import { UserformRequest, UserformResponse} from '../models/user';
 import axios from 'axios';
 
-const PREFIX = '/user';
+const baseURL = 'http://localhost:8000'; 
 
-// UserformAPI 함수 (JavaScript)
+const axiosInstance = axios.create({
+  baseURL, // 기본 URL 적용
+  timeout: 1000 * 60 * 5, // 요청 시간 초과: 5분
+  headers: {
+    'Content-Type': 'application/json', // 요청 데이터 형식 JSON
+  },
+});
+
 export const UserformAPI = (data) => {
-  const requestData = new UserformRequest(
-    data.name,
-    data.birthdate,
-    data.region,
-    data.single_household,
-    data.has_chronic_disease,
-    data.is_disabled_or_single_parent_or_grandparent,
-    data.housing_type,
-    data.is_low_income,
-    data.is_basic_living_recipient,
-    data.needs_medical_support
-  );
-
-  return axios.post(PREFIX + '/join', requestData).then(response => {
-    return new UserformResponse(
-      response.data.status,
-      response.data.message,
-      response.data.isSuccess,
-      response.data.success,
-      response.data.code,
-      response.data.detail
-    );
-  });
+  return axiosInstance.post(`/Userform`, data);
 };
+
+
+export default axiosInstance;
+
