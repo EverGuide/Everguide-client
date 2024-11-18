@@ -1,7 +1,6 @@
 import { AxiosError } from 'axios';
 import React, { useState } from 'react';
 import styles from '../styles/Userform.module.css';
-import Calendar from '../components/Calendar';
 import { UserformAPI } from '../apis/user.js';
 
 function Userform() {
@@ -22,6 +21,21 @@ function Userform() {
   const onChangeName = (e) => {
     setName(e.target.value);
     console.log(`이름 작성: ${e.target.value}`);
+  };
+
+  const onChangeYear = (e) => {
+    setYear(e.target.value);
+    console.log(`년 작성: ${e.target.value}`);
+  };
+
+  const onChangeMonth = (e) => {
+    setMonth(e.target.value);
+    console.log(`월 작성: ${e.target.value}`);
+  };
+
+  const onChangeDate = (e) => {
+    setDate(e.target.value);
+    console.log(`일 작성: ${e.target.value}`);
   };
 
   const handleSexSelect =  (e) => {
@@ -80,7 +94,7 @@ function Userform() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('폼이 제출되었습니다.');
+    console.log('폼이 다 작성되었습니다.');
   };
 
   const onApply = () => {
@@ -175,7 +189,8 @@ function Userform() {
                     name="year"
                     value={year}
                     placeholder="YYYY"
-                    readOnly={true}
+                    onChange={onChangeYear}
+                    required
                   />
                   <input
                     className={styles.BirthInputBox}
@@ -184,7 +199,8 @@ function Userform() {
                     name="month"
                     value={month}
                     placeholder="MM"
-                    readOnly={true}
+                    onChange={onChangeMonth}
+                    required
                   />
                   <input
                     className={styles.BirthInputBox}
@@ -193,12 +209,8 @@ function Userform() {
                     name="date"
                     value={date}
                     placeholder="DD"
-                    readOnly={true}
-                  />
-                  <Calendar
-                    setYear={setYear}
-                    setMonth={setMonth}
-                    setDate={setDate}
+                    onChange={onChangeDate}
+                    required
                   />
                 </div>
               </label>

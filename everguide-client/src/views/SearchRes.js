@@ -66,8 +66,7 @@ function SearchRes() {
 
         {loading && (
           <div>
-            <div className={styles.title}>열심히 찾는 중이에요.</div>
-            <div style={{ marginTop: "1vh", width: window.screen.width }} />
+            <div className={styles.title}>정보를 열심히 찾는 중이에요.</div>
           </div>
         )}
 
